@@ -1,11 +1,11 @@
 const express = require('express');
-const cors = require cors('cors');
+// const cors = require cors('cors');
 const server = express();
 
 // import routers 
-const postsRouter = require('./posts/postsrouter');
+const postsRouter = require('./posts/posts-router');
 
-server.use(cors());
+// server.use(cors());
 server.use(express.json());
 
 server.use('/api/posts', postsRouter);
@@ -17,3 +17,4 @@ server.get('/', (req, res) => {
     `);
 })
 
+module.exports = server;
